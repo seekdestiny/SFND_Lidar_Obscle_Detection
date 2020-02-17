@@ -53,7 +53,7 @@ std::pair<typename pcl::PointCloud<PointT>::Ptr, typename pcl::PointCloud<PointT
 {
     // Time segmentation process
     auto startTime = std::chrono::steady_clock::now();
-	pcl::PointIndices::Ptr inliers;
+    pcl::PointIndices::Ptr inliers;
     // TODO:: Fill in this function to find inliers for the cloud.
 
     auto endTime = std::chrono::steady_clock::now();
