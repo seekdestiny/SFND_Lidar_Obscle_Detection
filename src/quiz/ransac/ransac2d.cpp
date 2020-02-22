@@ -48,6 +48,7 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr CreateData3D()
 {
 	ProcessPointClouds<pcl::PointXYZ> pointProcessor;
 	return pointProcessor.loadPcd("../../../sensors/data/pcd/simpleHighway.pcd");
+	//return pointProcessor.loadPcd("../../../sensors/data/pcd/data_1/0000000000.pcd");
 }
 
 
@@ -209,16 +210,16 @@ int main ()
 	if(inliers.size())
 	{
 		renderPointCloud(viewer,cloudInliers,"inliers",Color(0,1,0));
-  		renderPointCloud(viewer,cloudOutliers,"outliers",Color(1,0,0));
+    renderPointCloud(viewer,cloudOutliers,"outliers",Color(1,0,0));
 	}
-  	else
-  	{
-  		renderPointCloud(viewer,cloud,"data");
-  	}
-	
-  	while (!viewer->wasStopped ())
-  	{
-  	  viewer->spinOnce ();
-  	}
+  else
+  {
+  	renderPointCloud(viewer,cloud,"data");
+  }
+  
+  while (!viewer->wasStopped ())
+  {
+    viewer->spinOnce ();
+  }
   	
 }
